@@ -1,6 +1,6 @@
 # Redmine app for YunoHost
 
-**Shipped version:** 4.0.4
+**Shipped version:** 4.0.2
 
 - [Yunohost project](https://yunohost.org)
 - [Redmine website](https://www.redmine.org/)
