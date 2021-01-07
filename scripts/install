@@ -74,7 +74,7 @@ ynh_install_app_dependencies $pkg_dependencies
 #=================================================
 ynh_script_progression --message="Installing Rails & Bunlder..." --time --weight=1
 
-ynh_install_ruby --ruby_version=$RUBY_VERSION
+#ynh_install_ruby --ruby_version=$RUBY_VERSION
 
 #=================================================
 # CREATE A POSTGRESQL DATABASE
