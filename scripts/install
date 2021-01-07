@@ -110,6 +110,7 @@ ynh_setup_source "$final_path"
 #=================================================
 ynh_print_info "Install Redmine Configuration..."
 
+ynh_print_info "$(pwd)"
 ynh_print_info "$(ls ../conf/)"
 cp -a ../conf/database.example.yml $final_path/config/database.yml
 
