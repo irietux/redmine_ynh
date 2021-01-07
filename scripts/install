@@ -142,6 +142,8 @@ pushd $final_path
 	chmod 755 -R /opt/redmine
 	ynh_print_info "$(ls -l /opt/redmine/.bundle)"
 	ynh_print_info "$(ls -al /opt/redmine/)"
+	ynh_exec_as bundle config set --local path 'vendor/bundle'
+	ynh_exec_as bundle config set --local without 'development test'
 	ynh_exec_as $app bundle install #--local without 'development test' --local path vendor/bundle
 	ynh_exec_as $app bundle exec rake generate_secret_token
 	ynh_exec_as $app RAILS_ENV=production bundle exec rake db:migrate
