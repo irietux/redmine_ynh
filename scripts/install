@@ -138,7 +138,7 @@ pushd $final_path
 	gem install bundler
 	ynh_print_info "$(ls -l /opt/ | grep redmine)"
 	ynh_print_info "$(ls -al /opt/redmine/)"
-	ynh_print_info "$(ls -al /opt/redmine/conf)"
+	ynh_print_info "$(ls -al /opt/redmine/.bundle/conf)"
 	ynh_exec_as $app bundle install --without development test --path vendor/bundle
 	ynh_exec_as $app bundle exec rake generate_secret_token
 	ynh_exec_as $app RAILS_ENV=production bundle exec rake db:migrate
