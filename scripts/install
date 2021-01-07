@@ -110,8 +110,8 @@ ynh_setup_source "$final_path"
 #=================================================
 ynh_print_info "Install Redmine Configuration..."
 
-ynh_print_info "$(pwd)"
-cp -a ./conf/database.example.yml $final_path/config/database.yml
+ynh_print_info "ls ../conf/"
+cp -a ../conf/database.example.yml $final_path/config/database.yml
 
 #ynh_replace_string "2.5.3"      "2.3.3"       "/opt/redmine/Gemfile"
 ynh_replace_string "__DB_NAME__"      "$db_name"    "$final_path/config/database.yml"
@@ -124,7 +124,7 @@ ynh_replace_string "__DB_NAME__"      "$db_name"    "$final_path/config/database
 #=================================================
 ynh_print_info "Install Redmine Conffiguration..."
 
-cp -a ./conf/configuration.example.yml $final_path/config/configuration.yml
+cp -a ../conf/configuration.example.yml $final_path/config/configuration.yml
 
 #=================================================
 # COMPILE REDMINE
