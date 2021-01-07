@@ -137,7 +137,8 @@ ynh_print_info "Compile Redmine..."
 pushd $final_path
 	gem install bundler
 	mkdir -p /opt/redmine/.bundle/
-	touch /opt/redmine/.bundle/config
+	touch /opt/redmine/.bundle/
+	ynh_print_info "$(whoami)"
 	chown root:root -R /opt/redmine/.bundle
 	chmod 777 -R /opt/redmine/.bundle
 	ynh_print_info "$(ls -al /opt/redmine/)"
