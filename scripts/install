@@ -133,7 +133,7 @@ cp -a ../conf/configuration.yml.example $final_path/config/configuration.yml
 # Configure database
 #
 
-#ynh_exec_as postgres psql -c "CREATE ROLE $db_name LOGIN ENCRYPTED PASSWORD '$db_pwd' NOINHERIT VALID UNTIL 'infinity';"
+ynh_exec_as postgres psql -c "CREATE ROLE $db_name LOGIN ENCRYPTED PASSWORD '$db_pwd' NOINHERIT VALID UNTIL 'infinity';"
 #ynh_exec_as postgres psql -c "CREATE DATABASE $db_name WITH ENCODING='UTF8' OWNER=$db_name;"
 
 #=================================================
