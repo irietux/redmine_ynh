@@ -125,9 +125,16 @@ ynh_replace_string "__DB_NAME__"      "$db_name"    "$final_path/config/database
 #=================================================
 # MODIFY A CONFIG FILE
 #=================================================
-ynh_print_info "Install Redmine Conffiguration..."
+ynh_print_info "Install Redmine Configuration..."
 
 cp -a ../conf/configuration.yml.example $final_path/config/configuration.yml
+
+#
+# Configure database
+#
+
+ynh_exec_as postgres psql -c "CREATE ROLE $db_name LOGIN ENCRYPTED PASSWORD '$db_pwd' NOINHERIT VALID UNTIL 'infinity';"
+ynh_exec_as postgres psql -c "CREATE DATABASE $db_name WITH ENCODING='UTF8' OWNER=$db_name;"
 
 #=================================================
 # COMPILE REDMINE
